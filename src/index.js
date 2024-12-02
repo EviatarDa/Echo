@@ -4,10 +4,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Your custom primary color (blue)
+    },
+    secondary: {
+      main: '#ff5722', // Your custom secondary color (orange)
+    },
+    background: {
+      default: '#f4f4f4', // Background color
+    },
+    text: {
+      primary: '#000000', // Text color
+    },
+  },
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
   </React.StrictMode>
 );
 
