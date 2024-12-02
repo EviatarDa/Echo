@@ -1,21 +1,23 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import SoundBoard from './components/SoundBoard';
+import Editor from './components/Editor';
+import Settings from './components/Settings';
 
 function App() {
-  return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Echo
-          </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Sign Up</Button>
-        </Toolbar>
-      </AppBar>
-      <h1>Hello!~!</h1>
-    </div>
-  );
+    return (
+        <Router>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/soundboard" element={<SoundBoard />} />
+                <Route path="/editor" element={<Editor />} />
+                <Route path="/settings" element={<Settings />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

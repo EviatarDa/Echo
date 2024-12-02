@@ -1,32 +1,27 @@
 import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav style={styles.navbar}>
-      <ul style={styles.navList}>
-        <li style={styles.navItem}>Home</li>
-        <li style={styles.navItem}>Instruments</li>
-        <li style={styles.navItem}>Recorder</li>
-        <li style={styles.navItem}>My Music</li>
-      </ul>
-    </nav>
+    <AppBar position="static" sx={{ backgroundColor: '#323' }}>
+      <Toolbar>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          Echo
+        </Typography>
+        <Box>
+          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/soundboard">Instruments</Button>
+          <Button color="inherit" component={Link} to="/editor">Recorder</Button>
+          <Button color="inherit" component={Link} to="/settings">My Music</Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }
-
-const styles = {
-  navbar: {
-    backgroundColor: '#333',
-    padding: '10px',
-  },
-  navList: {
-    listStyleType: 'none',
-    display: 'flex',
-    justifyContent: 'space-around',
-  },
-  navItem: {
-    color: '#fff',
-    cursor: 'pointer',
-  },
-};
 
 export default Navbar;
