@@ -14,7 +14,7 @@ function Navbar() {
           Echo
         </Typography>
         <Box>
-          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/">Home!</Button>
           <Button color="inherit" component={Link} to="/soundboard">Instruments</Button>
           <Button color="inherit" component={Link} to="/editor">Recorder</Button>
           <Button color="inherit" component={Link} to="/settings">My Music</Button>
