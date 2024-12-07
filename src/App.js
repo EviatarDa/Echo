@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import SoundBoard from './components/SoundBoard';
-import Editor from './components/Editor';
-import Settings from './components/Settings';
+import Home from './pages/Home';
+import Recorder from './pages/Recorder';
+import Instruments from './pages/Instruments';
+// import Editor from './pages/Editor';
+// import Settings from './pages/Settings';
 
 function App() {
     return (
@@ -12,9 +13,10 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/soundboard" element={<SoundBoard />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/instruments" element={<Instruments />} />
+                <Route path="/recorder" element={<Recorder  />} />
+                {/* <Route path="/editor" element={<Editor />} /> */}
+                {/* <Route path="/settings" element={<Settings />} /> */}
             </Routes>
         </Router>
     );
